@@ -58,12 +58,12 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [X] Commit: `Implement delete function in Subscriber repository.`
     -   [X] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
-    -   [ ] Commit: `Create Notification service struct skeleton.`
-    -   [ ] Commit: `Implement subscribe function in Notification service.`
-    -   [ ] Commit: `Implement subscribe function in Notification controller.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification service.`
-    -   [ ] Commit: `Implement unsubscribe function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
+    -   [X] Commit: `Create Notification service struct skeleton.`
+    -   [X] Commit: `Implement subscribe function in Notification service.`
+    -   [X] Commit: `Implement subscribe function in Notification controller.`
+    -   [X] Commit: `Implement unsubscribe function in Notification service.`
+    -   [X] Commit: `Implement unsubscribe function in Notification controller.`
+    -   [X] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
     -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
     -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
@@ -84,5 +84,10 @@ This is the place for you to write reflections:
 3. Menurut saya, penggunaan DashMap masih tetap diperlukan karena aplikasi bambangShop yang akan berjalan secara multithreading, membutuhkan sebuah koleksi data yang dapat diakses dengan aman oleh multiple thread karena sifatnya yang thread safe jika dibandingkan dengan Singleton pattern yang membatasi instance class menjadi satu instance saja, membuat implementasi menjadi kompleks akibat sifat rust yang memiliki ownership dan borrowing model.
 
 #### Reflection Publisher-2
+1. Pemisahan antara Service dan Repository diperlukan untuk memenuhi Single Responsibility Principle. Pada MVC, model memiliki fungsionalitas untuk mengelola data storage dan business logic, hal ini melanggar SRP yang di mana setiap modul seharusnya memiliki fungsionalitas yang terpisah dan independent. Hal ini juga bertujuan untuk mempermudah proses pengembangan dengan meningkatkan maintainability dari kode.
+
+2. Jika hanya menggunakan model, maka aplikasi akan kemungkinan setiap model akan memiliki coupling yang tinggi karena tidak adanya pemisahan service dan repository, membuat maintainability kode menjadi rendah karena sifatnya yang memerlukan perubahan tambahan di area kode lain ketika suatu fitur di model dilakukan perubahan.
+
+3. Postman sangat berguna untuk melakukan testing response pada API yang telah kita buat, postman dapat memberikan input simulasi sebuah user melakukan HTTP requests terhadap aplikasi kita dan kita dapat memonitor hasil yang diberikan dari aplikasi kita untuk mengetahui apakah aplikasi kita telah berjalan sesuai yang diinginkan. Fitur yang saya suka dari postman adalah postman collections yang bisa menyimpan kumpulan http requests yang telah kita buat dan tersusun dalam folder yang membuat testing API menjadi lebih mudah dan efisien.
 
 #### Reflection Publisher-3
