@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [X] Commit: `Implement unsubscribe function in Notification controller.`
     -   [X] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [X] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [X] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [X] Commit: `Implement publish function in Program service and Program controller.`
+    -   [X] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [X] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -91,3 +91,8 @@ This is the place for you to write reflections:
 3. Postman sangat berguna untuk melakukan testing response pada API yang telah kita buat, postman dapat memberikan input simulasi sebuah user melakukan HTTP requests terhadap aplikasi kita dan kita dapat memonitor hasil yang diberikan dari aplikasi kita untuk mengetahui apakah aplikasi kita telah berjalan sesuai yang diinginkan. Fitur yang saya suka dari postman adalah postman collections yang bisa menyimpan kumpulan http requests yang telah kita buat dan tersusun dalam folder yang membuat testing API menjadi lebih mudah dan efisien.
 
 #### Reflection Publisher-3
+1. Pada tutorial ini, variasi yang digunakan adalah Push Model, hal ini dapat dilihat dari algoritma kodingan yang melakukan iterasi send data (notify) ke setiap Subscriber pada setiap operasi CRUD pada product.
+
+2. Keuntungan yang dimiliki dengan Pull model adalah Observer dapat menentukan data apa yang mereka terima dan kapan mereka akan menerima, hal ini memberikan ruang kontrol yang lebih pada Subscriber untuk penerimaan data mereka. Kerugian dari Pull model ini adalah kompleksitas yang meningkat karena harus mengimplementasikan fetch logic dari subject apabila dibandingkan dengan push model yang hanya perlu mengirim update kepada setiap subscriber.
+
+3. Apabila kita tidak menggunakan multi-threading, maka akan terjadi sebuah antrean panjang pada push notifikasi ke subscriber apabila terdapat subscriber dengan skala yang besar, membuat bottleneck dan memperlambat kinerja aplikasi.
